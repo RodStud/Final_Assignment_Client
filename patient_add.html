@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Patient Add</title>
+</head>
+<body>
+<header class="container-fluid d-none d-md-block">
+    <div class="row">
+        <div class="col-2 text-center">
+            <img class="img" src="images/logo.png" alt="Logo">
+        </div>
+        <div class="col-10 d-flex justify-content-end">
+            <img id="header-img" src="images/header-doctor.png" alt="">
+        </div>
+    </div>
+</header>
+<main class="container-fluid p-0 m-0">
+    <div class="row p-0 m-0">
+        <div class="p-0 m-0 d-none d-md-block col-md-4 col-lg-3 col-xxl-2 menu-wrapper">
+            <div class="p-2 fs-5">
+                <nav class="nav flex-column fw-bold">
+                    <a class="nav-link icon-link text-black" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-calendar2-week" viewBox="0 0 16 16">
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                            <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        </svg>
+                        Appointments
+                    </a>
+                    <a class="nav-link icon-link text-black" href="patient_list.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-person-vcard" viewBox="0 0 16 16">
+                            <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+                            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
+                        </svg>
+                        Patients List
+                    </a>
+                    <a class="nav-link icon-link text-black" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-question-square" viewBox="0 0 16 16">
+                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                        </svg>
+                        Requests
+                    </a>
+                    <a class="nav-link icon-link text-black" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                        </svg>
+                        Games
+                    </a>
+                    <a id="logout_btn" class="nav-link icon-link text-danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-person-walking" viewBox="0 0 16 16">
+                            <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM6.44 3.752A.75.75 0 0 1 7 3.5h1.445c.742 0 1.32.643 1.243 1.38l-.43 4.083a1.75 1.75 0 0 1-.088.395l-.318.906.213.242a.75.75 0 0 1 .114.175l2 4.25a.75.75 0 1 1-1.357.638l-1.956-4.154-1.68-1.921A.75.75 0 0 1 6 8.96l.138-2.613-.435.489-.464 2.786a.75.75 0 1 1-1.48-.246l.5-3a.75.75 0 0 1 .18-.375l2-2.25Z"/>
+                            <path d="M6.25 11.745v-1.418l1.204 1.375.261.524a.75.75 0 0 1-.12.231l-2.5 3.25a.75.75 0 1 1-1.19-.914l2.345-3.048Zm4.22-4.215-.494-.494.205-1.843a1.93 1.93 0 0 0 .006-.067l1.124 1.124h1.44a.75.75 0 0 1 0 1.5H11a.75.75 0 0 1-.531-.22Z"/>
+                        </svg>
+                        Logout
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="p-2 fs-5 offcanvas offcanvas-start menu-wrapper" tabindex="-1" id="offcanvasMenu"
+             aria-labelledby="offcanvasMenuLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <nav class="nav flex-column fw-bold">
+                <a class="nav-link icon-link text-black" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-calendar2-week" viewBox="0 0 16 16">
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                    </svg>
+                    Appointments
+                </a>
+                <a class="nav-link icon-link text-black" href="patient_list.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-person-vcard" viewBox="0 0 16 16">
+                        <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z"/>
+                        <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2ZM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12V4Z"/>
+                    </svg>
+                    Patients
+                </a>
+                <a class="nav-link icon-link text-black" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-question-square" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                    </svg>
+                    Requests
+                </a>
+                <a class="nav-link icon-link text-black" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
+                        <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"/>
+                    </svg>
+                    Games
+                </a>
+                <a id="logout-btn" class="nav-link icon-link text-danger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-person-walking" viewBox="0 0 16 16">
+                        <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM6.44 3.752A.75.75 0 0 1 7 3.5h1.445c.742 0 1.32.643 1.243 1.38l-.43 4.083a1.75 1.75 0 0 1-.088.395l-.318.906.213.242a.75.75 0 0 1 .114.175l2 4.25a.75.75 0 1 1-1.357.638l-1.956-4.154-1.68-1.921A.75.75 0 0 1 6 8.96l.138-2.613-.435.489-.464 2.786a.75.75 0 1 1-1.48-.246l.5-3a.75.75 0 0 1 .18-.375l2-2.25Z"/>
+                        <path d="M6.25 11.745v-1.418l1.204 1.375.261.524a.75.75 0 0 1-.12.231l-2.5 3.25a.75.75 0 1 1-1.19-.914l2.345-3.048Zm4.22-4.215-.494-.494.205-1.843a1.93 1.93 0 0 0 .006-.067l1.124 1.124h1.44a.75.75 0 0 1 0 1.5H11a.75.75 0 0 1-.531-.22Z"/>
+                    </svg>
+                    Logout
+                </a>
+            </nav>
+        </div>
+        <div class="pb-5 mb-5 col-md-8 col-lg-9 col-xxl-10">
+            <div class="row mt-3">
+                <div class="col-1 d-md-none">
+                    <button class="btn icon-link" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-list"
+                             viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="col-11 col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home</a></li>
+                            <li class="breadcrumb-item active"><a href="patient_list.html">Patient List</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Patient</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+            <div class="m-3">
+                <div class="row">
+                    <div class="col-xxl-2 mb-3">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <div class="avatar-wrapper d-inline-block">
+                                    <a class="avatar-wrapper-patient">
+                                        <div class="avatar" style="">
+                                            <div class="avatar-aspect-ratio"></div>
+                                            <img alt="" draggable="true" src="images/plus.png">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card-title text-center pt-3">
+                                    <h5>Add Photo</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-10 mb-3">
+                        <div class="card shadow p-3">
+                            <div class="card-title">
+                                <h5>Personal Information</h5>
+                                <hr>
+                            </div>
+                            <div class="row">
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <label for="p_id_number" class="col-sm-3 col-form-label mb-2">ID Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p_id_number" name="p_id_number">
+                                        </div>
+                                        <label for="p_firs_name" class="col-sm-3 col-form-label mb-2">First Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p_firs_name" name="p_firs_name">
+                                        </div>
+                                        <label for="p_last_name" class="col-sm-3 col-form-label mb-2">Last Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p_last_name" name="p_last_name">
+                                        </div>
+                                        <label for="p_birth_date" class="col-sm-3 col-form-label mb-2">Birth
+                                            Date</label>
+                                        <div class="col-sm-9">
+                                            <input type="date" class="form-control" id="p_birth_date"
+                                                   name="p_birth_date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <label for="p_phone" class="col-sm-3 col-form-label mb-2">Phone</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p_phone" name="p_phone">
+                                        </div>
+                                        <label for="p_email" class="col-sm-3 col-form-label mb-2">E-Mail</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p_email" name="p_email">
+                                        </div>
+                                        <label for="p_hmo" class="col-sm-3 col-form-label mb-2">HMO</label>
+                                        <div class="col-sm-9">
+                                            <select  class="form-select" id="p_hmo" name="p_hmo">
+                                                <option selected value="0">Choose...</option>
+                                            </select>
+                                        </div>
+                                        <label for="p_diagnosis" class="col-sm-3 col-form-label mb-2">Diagnosis</label>
+                                        <div class="col-sm-9">
+                                            <select  class="form-select" id="p_diagnosis"
+                                                    name="p_diagnosis">
+                                                <option selected value="0">Choose...</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xxl">
+                                    <textarea class="form-control" id="p_description" name="p_description"
+                                              placeholder="Description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-2 mb-3">
+                        <div class="card shadow">
+                            <div class="card-body text-center">
+                                <div class="card-title text-center pt-3">
+                                    <h5>Add Hobbies</h5>
+                                </div>
+                                <div class="card-text">
+                                    <select class="form-select" multiple id="p_hobbies"
+                                            name="p_hobbies">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-10 mb-3">
+                        <div class="card shadow p-3">
+                            <div class="card-title">
+                                <h5>Parents Information</h5>
+                                <hr>
+                            </div>
+                            <div class="row">
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <h6 class="mb-3">Mother Information</h6>
+                                        <label for="p1_id_number" class="col-sm-3 col-form-label mb-2">ID Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p1_id_number"
+                                                   name="p1_id_number">
+                                        </div>
+                                        <label for="p1_firs_name" class="col-sm-3 col-form-label mb-2">First
+                                            Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p1_firs_name"
+                                                   name="p1_firs_name">
+                                        </div>
+                                        <label for="p1_last_name" class="col-sm-3 col-form-label mb-2">Last Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p1_last_name"
+                                                   name="p1_last_name">
+                                        </div>
+                                        <label for="p1_phone" class="col-sm-3 col-form-label mb-2">Phone</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p1_phone" name="p1_phone">
+                                        </div>
+                                        <label for="p1_email" class="col-sm-3 col-form-label mb-2">E-Mail</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p1_email" name="p1_email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl">
+                                    <div class="row">
+                                        <h6 class="mb-3">Father Information</h6>
+                                        <label for="p2_id_number" class="col-sm-3 col-form-label mb-2">ID Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p2_id_number"
+                                                   name="p2_id_number">
+                                        </div>
+                                        <label for="p2_firs_name" class="col-sm-3 col-form-label mb-2">First
+                                            Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p2_firs_name"
+                                                   name="p2_firs_name">
+                                        </div>
+                                        <label for="p2_last_name" class="col-sm-3 col-form-label mb-2">Last Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p2_last_name"
+                                                   name="p2_last_name">
+                                        </div>
+                                        <label for="p2_phone" class="col-sm-3 col-form-label mb-2">Phone</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p2_phone" name="p2_phone">
+                                        </div>
+                                        <label for="p2_email" class="col-sm-3 col-form-label mb-2">E-Mail</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="p2_email" name="p2_email">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col text-end">
+                        <div id="error" class="text-danger ms-1 text-center d-none">Incomplete or incorrect data</div>
+                        <button id="create_patient" class="btn btn-my fs-4 icon-link" type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-person-add" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                                <path d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z"/>
+                            </svg>
+                            Create Patient
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="container-fluid fixed-bottom p-5 d-none d-md-block">
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/patient_add.js"></script>
+</body>
+</html>
