@@ -1,0 +1,96 @@
+header, footer {
+    background-color: #20c997;
+}
+
+.menu-wrapper {
+    background: linear-gradient(to left, #ffffff 30%, #d2f4ea 70%);
+}
+
+.avatar-wrapper {
+    background-color: transparent;
+    padding: 1rem;
+}
+
+.avatar-wrapper-doctor {
+    position: relative;
+    z-index: 0;
+    width: 90px;
+    display: block;
+    border-radius: 9999px;
+    border: 4px solid #fff;
+    overflow: hidden;
+}
+
+.avatar-wrapper-patient {
+    position: relative;
+    z-index: 0;
+    width: 100px;
+    display: block;
+    border-radius: 9999px;
+    border: 4px solid #fff;
+    overflow: hidden;
+}
+
+.avatar-aspect-ratio {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.avatar img {
+    bottom: 0px;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+}
+
+.avatar-button {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.login-form {
+
+    background: #d3f4eb;
+    border-radius: 0 0 15px 15px;
+}
+
+.login-form input {
+    font-size: 1.5rem;
+}
+
+.btn-my {
+    border-radius: 20px !important;
+    background-color: #d2f4ea !important;
+}
+
+.card {
+    border-radius: 15px;
+    background-color: #d2f4ea;
+}
+
+.card-wrapper {
+    height: 100px;
+    width: 75%;
+}
+
+
+.table tbody tr td {
+    background-color: #d2f4ea !important;
+}
+
+.font-small {
+    font-size: 0.7rem;
+}
